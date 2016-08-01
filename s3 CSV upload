@@ -1,0 +1,23 @@
+
+--BASH
+
+--load table from box in the sky to s3 bucket
+s3cmd put Census_Test.txt s3://tgtg-client-ea/census_text.txt
+
+---------------------------------------------------------------------------------------------------------------------------
+
+--SQL
+
+--create table shell for data
+create table agilbert.census_test
+(col1 varchar(1024) );
+
+--load data from s3 bucket
+copy agilbert.census_test from 's3://tgtg-client-ea/census_test.txt'
+WITH CREDENTIALS 'aws_access_key_id='';aws_secret_access_key=''
+IGNOREHEADER 1 DELIMITER '\t' REMOVEQUOTES EMPTYASNULL BLANKSASNULL TRIMBLANKS
+DATEFORMAT AS 'YYYY-MM-DD' TIMEFORMAT AS 'YYYY-MM-DD HH:MI:SS' MAXERROR 1;
+
+--additional resources: 
+----http://docs.aws.amazon.com/redshift/latest/dg/r_UNLOAD.html
+----http://help.mortardata.com/integrations/amazon_s3/uploading_data_to_s3

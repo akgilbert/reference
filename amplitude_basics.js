@@ -1,5 +1,5 @@
-//SquareSpace --> Settings --> Website/Advanced --> Code Injection
-//Cut and Paste the following into Header:
+// Cut and Paste the following into SquareSpace --> Settings --> Website/Advanced --> Code Injection --> Header:
+// Update API Key and Website Name in lines 28 and 30 below
 
 <script>(function(e,t){var n=e.amplitude||{_q:[],_iq:{}};var r=t.createElement("script")
     ;r.type="text/javascript";r.async=true
@@ -24,9 +24,9 @@
     ;if(!n._iq.hasOwnProperty(e)){n._iq[e]={_q:[]};v(n._iq[e])}return n._iq[e]}
     ;e.amplitude=n})(window,document);
 
-    amplitude.getInstance().init("INSERT_API_KEY");
+    amplitude.getInstance().init("API KEY");
 
-    var website = 'Marion Street Strategies'
+    var website = 'WEBSITE NAME'
 
     var eventProperties = {};
     eventProperties.page_name = website;

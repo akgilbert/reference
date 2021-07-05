@@ -1,4 +1,4 @@
-#!/bin/sh
+	#!/bin/sh
 
 today=`date +%Y%m%d`
 ftp_user=''
@@ -6,78 +6,23 @@ ftp_pass=''
 
 mkdir $today
 
-wget --user=$ftp_user --password=$ftp_pass ftp://poliops.sharefileftp.com/Enroll_America/enrollmeetings.csv
-cat enrollmeetings.csv | tr -cd '\11\12\15\40-\176' | sed "s/'//g" > enrollmeetings_clean.csv
-mv enrollmeetings_clean.csv $today/enrollmeetings.csv
-wget --user=$ftp_user --password=$ftp_pass ftp://poliops.sharefileftp.com/Enroll_America/enrollactions.csv
-cat enrollactions.csv | tr -cd '\11\12\15\40-\176' | sed "s/'//g" > enrollactions_clean.csv
-mv enrollactions_clean.csv $today/enrollactions.csv
-wget --user=$ftp_user --password=$ftp_pass ftp://poliops.sharefileftp.com/Enroll_America/enrolllocations.csv
-cat enrolllocations.csv | tr -cd '\11\12\15\40-\176' | sed "s/'//g" > enrolllocations_clean.csv
-mv enrolllocations_clean.csv $today/enrolllocations.csv
-wget --user=$ftp_user --password=$ftp_pass ftp://poliops.sharefileftp.com/Enroll_America/enrollorgs.csv
-cat enrollorgs.csv | tr -cd '\11\12\15\40-\176' | sed "s/'//g" > enrollorgs_clean.csv
-mv enrollorgs_clean.csv $today/enrollorgs.csv
-wget --user=$ftp_user --password=$ftp_pass ftp://poliops.sharefileftp.com/Enroll_America/enrollorgs-2.csv
-cat enrollorgs-2.csv | tr -cd '\11\12\15\40-\176' | sed "s/'//g" > enrollorgs-2_clean.csv
-mv enrollorgs-2_clean.csv $today/enrollorgs-2.csv
-wget --user=$ftp_user --password=$ftp_pass ftp://poliops.sharefileftp.com/Enroll_America/enrollorgs-3.csv
-cat enrollorgs-3.csv | tr -cd '\11\12\15\40-\176' | sed "s/'//g" > enrollorgs-3_clean.csv
-mv enrollorgs-3_clean.csv $today/enrollorgs-3.csv
-wget --user=$ftp_user --password=$ftp_pass ftp://poliops.sharefileftp.com/Enroll_America/enrollorgs-4.csv
-cat enrollorgs-4.csv | tr -cd '\11\12\15\40-\176' | sed "s/'//g" > enrollorgs-4_clean.csv
-mv enrollorgs-4_clean.csv $today/enrollorgs-4.csv
-wget --user=$ftp_user --password=$ftp_pass ftp://poliops.sharefileftp.com/Enroll_America/enrollorgs-5.csv
-cat enrollorgs-5.csv | tr -cd '\11\12\15\40-\176' | sed "s/'//g" > enrollorgs-5_clean.csv
-mv enrollorgs-5_clean.csv $today/enrollorgs-5.csv
-wget --user=$ftp_user --password=$ftp_pass ftp://poliops.sharefileftp.com/Enroll_America/enrollcontacts.csv
-cat enrollcontacts.csv | tr -cd '\11\12\15\40-\176' | sed "s/'//g" > enrollcontacts_clean.csv
-mv enrollcontacts_clean.csv $today/enrollcontacts.csv
-wget --user=$ftp_user --password=$ftp_pass ftp://poliops.sharefileftp.com/Enroll_America/enrollclips.csv
-cat enrollclips.csv | tr -cd '\11\12\15\40-\176' | sed "s/'//g" > enrollclips_clean.csv
-mv enrollclips_clean.csv $today/enrollclips.csv
-wget --user=$ftp_user --password=$ftp_pass ftp://poliops.sharefileftp.com/Enroll_America/enrollonboarding.csv
-cat enrollonboarding.csv | tr -cd '\11\12\15\40-\176' | sed "s/'//g" > enrollonboarding_clean.csv
-mv enrollonboarding_clean.csv $today/enrollonboarding.csv
-wget --user=$ftp_user --password=$ftp_pass ftp://poliops.sharefileftp.com/Enroll_America/enrollsurrogates.csv
-cat enrollsurrogates.csv | tr -cd '\11\12\15\40-\176' | sed "s/'//g" > enrollsurrogates_clean.csv
-mv enrollsurrogates_clean.csv $today/enrollsurrogates.csv
-wget --user=$ftp_user --password=$ftp_pass ftp://poliops.sharefileftp.com/Enroll_America/enrollpressevents.csv
-cat enrollpressevents.csv | tr -cd '\11\12\15\40-\176' | sed "s/'//g" > enrollpressevents_clean.csv
-mv enrollpressevents_clean.csv $today/enrollpressevents.csv
-wget --user=$ftp_user --password=$ftp_pass ftp://poliops.sharefileftp.com/Enroll_America/enrollfundraising.csv
-cat enrollfundraising.csv | tr -cd '\11\12\15\40-\176' | sed "s/'//g" > enrollfundraising_clean.csv
-mv enrollfundraising_clean.csv $today/enrollfundraising.csv
+wget --user=$ftp_user --password=$ftp_pass ftp://poliops.sharefileftp.com/TEST/sample_a.csv
+cat sample_a.csv | tr -cd '\11\12\15\40-\176' | sed "s/'//g" > sample_a_clean.csv
+mv sample_a_clean.csv $today/sample_a.csv
+wget --user=$ftp_user --password=$ftp_pass ftp://poliops.sharefileftp.com/TEST/sample_b.csv
+cat sample_b.csv | tr -cd '\11\12\15\40-\176' | sed "s/'//g" > sample_b_clean.csv
+mv sample_b_clean.csv $today/sample_b.csv
+wget --user=$ftp_user --password=$ftp_pass ftp://poliops.sharefileftp.com/TEST/sample_c.csv
+cat sample_c.csv | tr -cd '\11\12\15\40-\176' | sed "s/'//g" > sample_c_clean.csv
+mv sample_c_clean.csv $today/sample_c.csv
+wget --user=$ftp_user --password=$ftp_pass ftp://poliops.sharefileftp.com/TEST/enrollorgs.csv
 
-rm enrollmeetings.csv
-rm enrollactions.csv
-rm enrolllocations.csv
-rm enrollorgs.csv
-rm enrollorgs-2.csv
-rm enrollorgs-3.csv
-rm enrollorgs-4.csv
-rm enrollorgs-5.csv
-rm enrollcontacts.csv
-rm enrollclips.csv
-rm enrollsurrogates.csv
-rm enrollpressevents.csv
-rm enrollonboarding.csv
-rm enrollfundraising.csv
+rm sample_a.csv
+rm sample_b.csv
+rm sample_c.csv
 
 cd $today
 
-s3cmd put enrollmeetings.csv s3://tgtg-client-ea/quickbase/enrollmeetings.csv
-s3cmd put enrollactions.csv s3://tgtg-client-ea/quickbase/enrollactions.csv
-s3cmd put enrolllocations.csv s3://tgtg-client-ea/quickbase/enrolllocations.csv
-s3cmd put enrollorgs.csv s3://tgtg-client-ea/quickbase/enrollorgs-1.csv
-s3cmd put enrollorgs-2.csv s3://tgtg-client-ea/quickbase/enrollorgs-2.csv
-s3cmd put enrollorgs-3.csv s3://tgtg-client-ea/quickbase/enrollorgs-3.csv
-s3cmd put enrollorgs-4.csv s3://tgtg-client-ea/quickbase/enrollorgs-4.csv
-s3cmd put enrollorgs-5.csv s3://tgtg-client-ea/quickbase/enrollorgs-5.csv
-s3cmd put enrollcontacts.csv s3://tgtg-client-ea/quickbase/enrollcontacts.csv
-s3cmd put enrollclips.csv s3://tgtg-client-ea/quickbase/enrollclips.csv
-s3cmd put enrollpressevents.csv s3://tgtg-client-ea/quickbase/enrollpressevents.csv
-s3cmd put enrollsurrogates.csv s3://tgtg-client-ea/quickbase/enrollsurrogates.csv
-s3cmd put enrollonboarding.csv s3://tgtg-client-ea/quickbase/enrollonboarding.csv
-s3cmd put enrollfundraising.csv s3://tgtg-client-ea/quickbase/enrollfundraising.csv
-
+s3cmd put sample_a.csv s3://tgtg-client-ea/quickbase/sample_a.csv
+s3cmd put sample_b.csv s3://tgtg-client-ea/quickbase/sample_b.csv
+s3cmd put sample_c.csv s3://tgtg-client-ea/quickbase/sample_c.csv
